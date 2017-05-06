@@ -1,0 +1,13 @@
+<p><%= notice %></p>
+
+<h1>Twitterです</h1>
+
+<% @tweeets.each do |tweeet| %>
+  <p>本文:<%= tweeet.content %></p>
+  <%= link_to "ツイートを編集", edit_tweeet_path(tweeet.id) %>
+  <br>
+  <%= link_to "ツイートを削除", tweeet_path(tweeet.id), method: :delete %>
+<% end %>
+<br>
+<br>
+<%= link_to "ツイート", new_tweeet_path %>
